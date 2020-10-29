@@ -38,6 +38,12 @@ public:
         return array[p];
     }
 
+
+    friend Arra<T>& operator <<(Arra<T> &a,const T& v){
+        a.insertaini(v);
+        return a;
+    }
+
 };
 
     template <class T> 
@@ -166,6 +172,10 @@ public:
        
         return nullptr;
     }
+    //sobrecarga
+
+    
+
 
 
 

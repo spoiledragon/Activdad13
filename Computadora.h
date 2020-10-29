@@ -27,6 +27,13 @@ public:
     std::string getSistema()    const;
     int getRam()                const;
 
+    bool operator==(const Computador& c){
+        return nombre==c.getNombre();
+    }
+
+    bool operator==(const Computador& c) const {
+        return nombre==c.getNombre();
+    }
 };
 
 
