@@ -18,17 +18,20 @@ private:
     
 public:
 
+    
+
+    Arra();
+    ~Arra();
+    size_t size();
+    void expancion();
+    
     void insertafin(const T& s);
     void insertaini(const T& s);
     void insertarx(const T& s,const int& x);
     void borrarini();
     void borrarfin();
     void borrarx(const int& x);
-    Arra();
-    ~Arra();
-    size_t size();
-    void expancion();
-    
+    T* buscar(const T& v);
 
     string operator[](size_t p)
     {
@@ -149,6 +152,19 @@ public:
         }
         cont--;
 
+    }
+
+    template<class T>
+    T* Arra<T>::buscar(const T& v){
+
+       for (size_t i = 0; i < cont; i++)
+       {
+           if(v==array[i]){
+               return &array[i];
+           }
+       }
+       
+        return nullptr;
     }
 
 
