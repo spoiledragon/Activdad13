@@ -32,17 +32,22 @@ public:
     void borrarfin();
     void borrarx(const int& x);
     T* buscar(const T& v);
+    Arra<T*> buscar_todos(const T& v);
 
-    string operator[](size_t p)
+    T operator[](size_t p)
     {
         return array[p];
     }
 
 
     friend Arra<T>& operator <<(Arra<T> &a,const T& v){
-        a.insertaini(v);
+        a.insertafin(v);
         return a;
     }
+
+
+
+
 
 };
 
@@ -172,9 +177,20 @@ public:
        
         return nullptr;
     }
-    //sobrecarga
-
     
+
+    template<class T>
+    Arra<T*> Arra<T>::buscar_todos(const T& v){
+        Arra<T*> ptrs;
+        for (size_t i = 0; i < cont; i++)
+       {
+           if(v==array[i]){
+               ptrs.insertafin(&array[i]);
+           }
+       }
+
+       return ptrs;
+    }
 
 
 
