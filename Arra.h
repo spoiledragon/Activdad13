@@ -32,6 +32,7 @@ public:
     void borrarfin();
     void borrarx(const int& x);
     T* buscar(const T& v);
+    
     Arra<T*> buscar_todos(const T& v);
 
     T operator[](size_t p)
